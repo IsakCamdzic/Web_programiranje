@@ -77,8 +77,55 @@ ul {
     margin-bottom: 40px;
 }
 
-ul li {
-    margin: 15px 0;
+#tribute-info ul {
+    list-style: none;
+    padding-left: 25px;
+    border-left: 2px solid #2d2440;
+}
+
+#tribute-info ul li {
+    position: relative;
+    margin: 16px 0;
+    padding: 10px 16px;
+    background-color: #191424;
+    border: 1px solid #2d2440;
+    border-radius: 6px;
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#tribute-info ul li::before {
+    content: "✦";
+    position: absolute;
+    left: -36px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    text-align: center;
+    background-color: #14121b;
+    color: #39ff14;
+    font-size: 14px;
+    line-height: 1;
+    padding: 4px 0;
+    text-shadow: 0 0 8px rgba(57, 255, 20, 0.7);
+    transition:
+        color 0.2s ease,
+        text-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+#tribute-info ul li:hover {
+    transform: translateX(6px);
+    border-color: #ff7700;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+#tribute-info ul li:hover::before {
+    color: #ff7700;
+    text-shadow: 0 0 10px rgba(255, 119, 0, 0.9);
+    transform: translate(-6px, -50%) scale(1.25);
 }
 
 .disclaimer {
