@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="hr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Tim Burton - Tribute Page</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body onclick="document.getElementById('bg-music').play()">
+        <nav role="navigation">
+            <div id="menuToggle">
+                <input type="checkbox" id="menuCheckbox" />
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+                <ul id="menu">
+                    <li>
+                        <a href="#title">
+                            <label for="menuCheckbox" onclick="this.parentNode.click()">Početna</label>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#img-div">
+                            <label for="menuCheckbox" onclick="this.parentNode.click()">Slika</label>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#tribute-info">
+                            <label for="menuCheckbox" onclick="this.parentNode.click()">Biografija</label>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#tribute-link">
+                            <label for="menuCheckbox" onclick="this.parentNode.click()">Wikipedia</label>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div id="main">
+            <header>
+                <div id="title">
+                    <h1>Tim Burton</h1>
+                    <p>A man of mystical Arabic and English works</p>
+                </div>
+
+                <audio id="bg-music" src="creepy-music.ogg" autoplay loop controls></audio>
+
+                <figure id="img-div">
+                    <img
+                        src="https://www.themarysue.com/wp-content/uploads/2024/08/Winona-Ryder-as-Lydia-Deetz-in-Beetlejuice.jpg?resize=1200%2C675"
+                        alt="Winona kao Lydia u Beetlejuice-u."
+                        id="image"
+                    />
+                    <figcaption id="img-caption">
+                        Bila je ekscentrična, gotska Lydia u horor komediji Beetlejuice iz 1988. u režiji Tima Burtona,
+                        koji ju je regrutirao nakon što ju je vidio u njezinom prvom filmu
+                        <a href="https://www.imdb.com/title/tt0094721/" target="_blank">Beetlejuice</a>.
+                    </figcaption>
+                </figure>
+            </header>
+
+            <main id="tribute-info">
+                <h3>Rani uspjeh:</h3>
+                <ul>
+                    <li><strong>1958:</strong> Rođen kao Timothy Walter Burton 25. augusta u Burbanku, Kalifornija.</li>
+                    <li><strong>1979:</strong> Zapošljava se u Walt Disney Productions kao pripravnik animator.</li>
+                    <li><strong>1982:</strong> Režira kratki animirani film Vincent i kratki film Frankenweenie.</li>
+                    <li><strong>1985:</strong> Prvi veliki uspjeh dugometražnim filmom Pee-wee's Big Adventure.</li>
+                    <li><strong>1988:</strong> Režira kultnu horor-komediju Beetlejuice.</li>
+                    <li><strong>1989:</strong> Režira blokbaster Batman.</li>
+                    <li><strong>1990:</strong> Stvara mračnu bajku Edward Scissorhands sa Johnnyjem Deppom.</li>
+                    <li><strong>1993:</strong> Producira i kreira stop-motion klasik The Nightmare Before Christmas.</li>
+                    <li><strong>2005:</strong> Režira Corpse Bride i Charlie and the Chocolate Factory.</li>
+                    <li><strong>2007:</strong> Osvaja Zlatni globus za film Sweeney Todd.</li>
+                    <li><strong>2010:</strong> Film Alice in Wonderland zarađuje preko milijardu dolara.</li>
+                    <li><strong>2022:</strong> Režira popularnu Netflix seriju Wednesday.</li>
+                    <li><strong>2024:</strong> Izlazi nastavak Beetlejuice Beetlejuice.</li>
+                </ul>
+
+                <figure>
+                    <p>
+                        <em
+                            >"Filmski stvaratelj Tim Burton dobio je 2788. zvijezdu na holivudskoj Stazi slavnih 3.
+                            septembra 2024. godine."</em
+                        >
+                    </p>
+                    <figcaption><em>-- Hollywood Walk of Fame</em></figcaption>
+                </figure>
+
+                <p class="disclaimer">
+                    <small
+                        >*Timeline details courtesy of
+                        <a
+                            href="https://www.remindmagazine.com/wp-content/uploads/2024/09/tim-burton-walk-of-fame-star-1420x798.jpg"
+                            target="_blank"
+                            >Tim Burton</a
+                        ></small
+                    >.
+                </p>
+            </main>
+
+            <footer>
+                <h3>
+                    Ako imate vremena, trebali biste pročitati više o ovom nevjerojatno talentiranom filmskom
+                    stvaratelju na:
+                </h3>
+                <a href="https://en.wikipedia.org/wiki/Tim_Burton" id="tribute-link" target="_blank"
+                    ><span>Wikipedia entry</span></a
+                >
+            </footer>
+        </div>
+    </body>
+</html>

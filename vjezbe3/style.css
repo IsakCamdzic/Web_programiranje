@@ -1,0 +1,337 @@
+@import url("https://fonts.googleapis.com/css2?family=Literata&family=Playfair+Display:wght@700;900&family=Space+Mono:wght@400;700&display=swap");
+
+* {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0d0b14;
+    color: #e6e0ee;
+    margin: 0;
+    padding: 0;
+}
+
+#main {
+    background-color: #14121b;
+    margin: 30px 0;
+    font-family: "Literata", serif;
+    font-weight: 300;
+    text-align: center;
+    box-sizing: border-box;
+    border: 2px solid #2d2440;
+}
+
+#title {
+    font-size: 150%;
+    padding-top: 50px;
+}
+
+#title h1 {
+    font-family: "Playfair Display", serif;
+    color: #ff7700;
+}
+
+#img-div {
+    background-color: #191424;
+    margin: 40px 20px;
+    padding: 20px 10px;
+    border: 2px solid #2d2440;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: #39ff14;
+}
+
+#tribute-info {
+    width: 60%;
+    margin: 0 auto;
+}
+
+@media (max-width: 750px) {
+    #tribute-info {
+        width: 90%;
+    }
+}
+
+#tribute-info :not(h3) {
+    text-align: left;
+    line-height: 1.5rem;
+}
+
+h3 {
+    font-family: "Playfair Display", serif;
+    color: #ffb68d;
+}
+
+h3,
+ul {
+    margin-bottom: 40px;
+}
+
+ul li {
+    margin: 15px 0;
+}
+
+.disclaimer {
+    margin-top: 30px;
+    font-family: "Space Mono", monospace;
+    color: #7d7291;
+}
+
+ul li strong {
+    font-family: "Space Mono", monospace;
+    font-weight: 600;
+    color: #ff7700;
+}
+
+footer {
+    padding: 20px 5px 40px;
+    line-height: 1.5rem;
+}
+
+/* Hamburger menu sa Moodle-a */
+#menuToggle {
+    display: block;
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    z-index: 1;
+    user-select: none;
+}
+
+#menuToggle a {
+    text-decoration: none;
+    color: #e6e0ee;
+    transition: color 0.3s ease;
+}
+
+#menuToggle a:hover {
+    color: #ff7700;
+}
+
+#menuToggle input {
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+}
+
+#menuToggle span {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #ff7700;
+    border-radius: 3px;
+    z-index: 1;
+    transform-origin: 4px 0px;
+    transition:
+        transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+        background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+        opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+    transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+    transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked ~ span {
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: #39ff14;
+}
+
+#menuToggle input:checked ~ span:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2) {
+    transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menu {
+    position: absolute;
+    max-width: 300px;
+    width: 100vw;
+    max-height: 100vh;
+    margin: -100px 0 0 -50px;
+    padding: 50px;
+    padding-top: 125px;
+    box-sizing: border-box;
+    background: #191424;
+    list-style-type: none;
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+#menu li {
+    padding: 10px 0;
+    font-size: 22px;
+}
+
+#menu li label {
+    cursor: pointer;
+}
+
+#menuToggle input:checked ~ ul {
+    transform: none;
+}
+
+/* Animated gradient ghost button sa Moodle-a */
+#tribute-link {
+    position: relative;
+    display: block;
+    width: 220px;
+    height: 70px;
+    margin: 0 auto;
+    z-index: 1;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    letter-spacing: 2px;
+    line-height: 70px;
+    font-family: "Space Mono", monospace;
+    font-size: 18px;
+}
+
+#tribute-link:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background: linear-gradient(120deg, #c4b5fd, #ff7700, #39ff14);
+    background-size: 400% 400%;
+    -webkit-clip-path: polygon(
+        0% 100%,
+        4px 100%,
+        4px 4px,
+        216px 4px,
+        216px 66px,
+        4px 66px,
+        4px 100%,
+        100% 100%,
+        100% 0%,
+        0% 0%
+    );
+    animation:
+        gradient 3s ease-in-out infinite,
+        border 1s forwards ease-in-out reverse;
+}
+
+#tribute-link > span {
+    display: block;
+    background: linear-gradient(120deg, #c4b5fd, #ff7700, #39ff14);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient 3s ease-in-out infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 14% 0%;
+    }
+    50% {
+        background-position: 87% 100%;
+    }
+    100% {
+        background-position: 14% 0%;
+    }
+}
+
+@keyframes border {
+    0% {
+        -webkit-clip-path: polygon(
+            0% 100%,
+            4px 100%,
+            4px 4px,
+            216px 4px,
+            216px 66px,
+            4px 66px,
+            4px 100%,
+            100% 100%,
+            100% 0%,
+            0% 0%
+        );
+    }
+    25% {
+        -webkit-clip-path: polygon(
+            0% 100%,
+            4px 100%,
+            4px 4px,
+            216px 4px,
+            216px 66px,
+            216px 66px,
+            216px 100%,
+            100% 100%,
+            100% 0%,
+            0% 0%
+        );
+    }
+    50% {
+        -webkit-clip-path: polygon(
+            0% 100%,
+            4px 100%,
+            4px 4px,
+            216px 4px,
+            216px 4px,
+            216px 4px,
+            216px 4px,
+            216px 4px,
+            100% 0%,
+            0% 0%
+        );
+    }
+    75% {
+        -webkit-clip-path: polygon(
+            0% 100%,
+            4px 100%,
+            4px 4px,
+            4px 4px,
+            4px 4px,
+            4px 4px,
+            4px 4px,
+            4px 4px,
+            4px 0%,
+            0% 0%
+        );
+    }
+    100% {
+        -webkit-clip-path: polygon(
+            0% 100%,
+            4px 100%,
+            4px 100%,
+            4px 100%,
+            4px 100%,
+            4px 100%,
+            4px 100%,
+            4px 100%,
+            4px 100%,
+            0% 100%
+        );
+    }
+}
